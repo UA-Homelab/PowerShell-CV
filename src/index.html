@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>PowerShell CV</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+<body>
+    <div class="header">
+        <!-- <pre class="ascii">
+            ___                    ___ _        _ _  _____   __ 
+            | _ \_____ __ _____ _ _/ __| |_  ___| | |/ __\ \ / / 
+            |  _/ _ \ V  V / -_) '_\__ \ ' \/ -_) | | (__ \ V / 
+            |_| \___/\_/\_/\___|_| |___/_||_\___|_|_|\___| \_/  
+            
+            
+        </pre> -->
+        <div class="projectInformation">
+            <p>Alexander Urdl - My life in a PowerShell</p> <br>
+            <p>Github: <a href="https://github.com/UA-Homelab/PowerShell-CV" target="_blank">https://github.com/UA-Homelab/PowerShell-CV</a></p><br>
+        </div>
+        <div class="welcomeMessage">
+            <p class="greeting">Welcome to my first personal project!</p> <br>
+            <div class="about">
+                <h1>About</h1>
+                <p>On this site you can use commands, that resemble PowerShell syntax, to get information about my personal life and career.</p> <br>
+                <p>I choose this project because I am not a great designer but have high standards to myself and my work.</p><br>
+                <p>Hoping to be able to finish a personal project, I choose this text based design, so I can focus on the logic and technology for the site.</p><br>
+            </div>
+            <div class="technicalInformation">
+                <h1>Technical Information</h1>
+                <p>This project was build using HTML, CSS, Javascript, Go and Azure Cosmos DB.</p><br>
+                <p>It is hosted in Azure. The infrastructure was prepared with Bicep templates, that can be found in the project repository.</p><br>
+                <p>The code is deployed to a "Static Web App" for frontend and a "Function App" for backend using GitHub Actions.</p><br>
+                <p>An "Azure Cosmos DB" contains the JSON files that are used for the commands output. </p>
+            </div>
+            <br>
+            <p>I hope you like it and have fun! :) </p> <br>
+            <p class="help">To get started type "Get-Help". This will return all available commands.</p> <br>             
+            <div class ="regards">
+                <p>Best regards, </p><br>
+                <p>Alex</p>
+            </div>
+        </div>
+
+    </div>
+    <div> 
+        <p class="input">PS CV:> <input class="newInputLine" id="activeInputLine" type="text" autofocus spellcheck="false"></p>
+    </div>
+    <div id="insertTest"></div>
+
+    <script type = "text/javascript" src="functions.js"></script> 
+    <script>
+        prepareCommandInput();
+    </script>
+</body>
+</html>

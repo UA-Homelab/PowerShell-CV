@@ -1,0 +1,116 @@
+body {
+    background-color: #012456;
+    font-family: Consolas, monaco, monospace; 
+    font-size: 14px; 
+    font-style: normal; 
+    font-variant: normal; 
+    line-height: 20px;
+    font-weight: 500;
+    color: rgb(231, 226, 226);
+    width: 100%;
+}
+
+input {
+    width: 75%;
+    border:none;
+    border-width: 0px;
+    background-color: #012456;
+    color: rgb(201, 204, 38);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input:focus {
+    width: 75%;
+    outline:none;
+}
+
+br {
+    line-height: 0px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+p {
+    margin: 0;
+    
+}
+
+a {
+    color: white;
+}
+
+.projectInformation {
+    padding-bottom: 2em;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.newInputLine {
+    margin-top: 10px;
+    font-family: Consolas, monaco, monospace; 
+}
+
+.error {
+    color: red;
+}
+
+.header {
+    width: 100%;
+    
+}
+
+.ascii {
+    margin: 0px;
+    font-weight: 500;
+    margin-left: 0px;
+}
+
+.welcomeMessage {
+    color: #012456;
+    background-color: rgb(231, 226, 226);
+    padding: 1em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    width: 80%;
+}
+
+.greeting {
+    margin-bottom: 1em;
+}
+
+.regards {
+    margin-top: 1em;
+}
+
+.help {
+    margin-top: 1em;
+    font-weight: bolder;
+    color: green;
+}
+
+.technicalInformation {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+#newResponseBlock {
+    margin-top: 10px;
+}
+
+#newInputField {
+    margin-top: 10px;
+}
+
+#breakNInputField {
+    margin-top: 10px;
+}
+
