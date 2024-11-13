@@ -62,6 +62,8 @@ a {
 
 .error {
     color: red;
+    background-color: black;
+    width: 50%;
 }
 
 .header {

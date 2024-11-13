@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
 	"github.com/Azure/azure-sdk-for-go/sdk/data/azcosmos"
@@ -61,6 +62,12 @@ func getCommand(w http.ResponseWriter, r *http.Request) {
 
 	credential, err := azidentity.NewDefaultAzureCredential(nil)
 	if err != nil {
+		commandNotFound.Message = "Failed to obtain a credential"
+		commandNotFound.Error = err
+
+		jsonError, _ := json.Marshal(commandNotFound)
+
+		fmt.Fprintln(w, string(jsonError))
 		Error.Printf("failed to obtain a credential: %v", err)
 	}
 
@@ -70,6 +77,12 @@ func getCommand(w http.ResponseWriter, r *http.Request) {
 
 	client, err := azcosmos.NewClient("https://cdb-pscv-prod-ne-001.documents.azure.com:443/", credential, &clientOptions)
 	if err != nil {
+		commandNotFound.Message = "Couldn't connect to Cosmos DB"
+		commandNotFound.Error = err
+
+		jsonError, _ := json.Marshal(commandNotFound)
+
+		fmt.Fprintln(w, string(jsonError))
 		Error.Println(err)
 	}
 
@@ -83,11 +96,11 @@ func getCommand(w http.ResponseWriter, r *http.Request) {
 		Error.Println(err)
 	}
 
-	partitionKey := azcosmos.NewPartitionKeyString(body.Command)
+	partitionKey := azcosmos.NewPartitionKeyString(strings.ToLower(body.Command))
 
 	context := context.TODO()
 
-	response, err := container.ReadItem(context, partitionKey, body.Command, nil)
+	response, err := container.ReadItem(context, partitionKey, strings.ToLower(body.Command), nil)
 	if err != nil {
 		commandNotFound.Message = "The term '" + body.Command + "' is not recognized as a name of a cmdlet, function, script file, or executable program.<br> Check the spelling of the name. For a list of available commands you can enter 'Get-Help'."
 		commandNotFound.Error = err
