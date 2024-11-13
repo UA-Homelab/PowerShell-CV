@@ -122,7 +122,7 @@ function getCommand(command) {
         window.open("https://github.com/UA-Homelab/PowerShell-CV").focus();
     } 
     else {
-        const requestUrl = "https://fa-pscv-prod-ne-001.azurewebsites.net/api/getcommand"
+        const requestUrl = "https://fa-pscv-prod-ne-001.azurewebsites.net/api/getCommand"
         //const requestUrl = "http://localhost:7071/api/getCommand"
         apiRequest(requestUrl, command);
     }
