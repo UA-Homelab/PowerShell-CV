@@ -8,7 +8,17 @@ const availableCommands = [
     "Get-PersonalInformation",
     "Get-WorkExperience",
     "Open-GitHubRepo",
-    "Get-Hobby"
+    "Open-SoundCloud",
+    "Open-LinkedIn",
+    "Get-Hobby",
+    "Clear-Host",
+    "Get-FuturamaHeadPortrait",
+    "Get-ContactInformation",
+    "Get-RandomFactAboutMe",
+    "Get-GeneralRandomFact",
+    "Get-Instrument",
+    "Get-Skill"
+
 ]
 var alreadyTabedCommands = [];
 var saveInputLineValue = "";
@@ -51,7 +61,7 @@ function commandPlusC() {
     const inputLine = document.getElementById(inputLineId);
     
     const inputDummy = '<div class="dummyInputLine" id="activeInputLine">' + inputLine.value + '</div>'
-    const coloredText = "<p class='commandPlusC' style='display:inline; colour:red'>" + inputDummy + "^C</p>";
+    const coloredText = inputDummy + "<p class='commandPlusC' style='display:inline; color:red;'>^C</p>";
     inputLine.outerHTML = coloredText
 }
 
@@ -64,14 +74,6 @@ function pressTabToComplete() {
     tabPressCounter = tabPressCounter + 1
 
     for(var i = 0; i < availableCommands.length; i++) {
-
-        // if (i >= (availableCommands.length - 1) && ) {
-
-        //     if (availableCommands.some(str => (str.toLowerCase()).startsWith(saveInputLineValue.toLowerCase()))) {
-        //         i = 0
-        //     }           
-        //     alreadyTabedCommands = [];
-        // }
 
         var availableCommandLowercase = availableCommands[i].toLowerCase();
 
@@ -128,7 +130,7 @@ function errorMessage(message) {
 }
 
 function createNewInputLine(command) {
-    const newInputLine = "<p class='input'>PS CV:> <input class='" + inputLineClass + "' id='" + inputLineId + "' type='text' spellcheck='false'></p>";
+    const newInputLine = "<p class='input'>PS CV:> <input class='" + inputLineClass + "' id='" + inputLineId + "' type='text' spellcheck='false' autocomplete='off'></p>";
 
     
     document.getElementById('insertTest').insertAdjacentHTML('beforeend', newInputLine);
@@ -197,7 +199,6 @@ function getCommand(command) {
     } 
     else {
         const requestUrl = "https://fa-pscv-prod-ne-001.azurewebsites.net/api/getCommand"
-        //const requestUrl = "http://localhost:7071/api/getCommand"
         apiRequest(requestUrl, command);
     }
 }
