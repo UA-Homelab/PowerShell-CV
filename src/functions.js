@@ -3,12 +3,22 @@ const inputLogArray = [];
 var inputCounter = 0;
 const inputLineId = "activeInputLine";
 const inputLineClass = "newInputLine";
+const availableCommands = [
+    "Get-Help",
+    "Get-PersonalInformation",
+    "Get-WorkExperience",
+    "Open-GitHubRepo",
+    "Get-Hobby"
+]
+var alreadyTabedCommands = [];
+var saveInputLineValue = "";
+var tabPressCounter = 0;
 
 // Used to prepare a new input field
 function prepareCommandInput() {
     var commandInput = document.getElementById(inputLineId);
     commandInput.addEventListener ("keydown", function(event) {
-        if (event.code == "Enter" || event.key == "KEYCODE_ENTER") {
+        if (event.key == "Enter") { //event.code == "Enter" || 
             sendValue(event);
         }
         if (event.code === "ArrowUp") {
@@ -17,14 +27,76 @@ function prepareCommandInput() {
         if (event.code === "ArrowDown") {
             navigateThroughCommandHistoryForward(commandInput, inputLogArray, inputCounter);
         }
-        if (event.key == "-") { //event.key is independent of the keyboard layout
+        if (event.key == "-") {
+        }
+        if (event.key === 'Tab') {
+            event.preventDefault();
+            pressTabToComplete();
+        }
+        if (event.key === 'Backspace') {
+
+            tabPressCounter = 0;
+            alreadyTabedCommands = []
+            console.log(tabPressCounter);
+        }
+        if (event.ctrlKey && event.key === 'c') {
+            event.preventDefault();
+            commandPlusC()
+            createNewInputLine();
         }
     })
+}
+
+function commandPlusC() {
+    const inputLine = document.getElementById(inputLineId);
+    
+    const inputDummy = '<div class="dummyInputLine" id="activeInputLine">' + inputLine.value + '</div>'
+    const coloredText = "<p class='commandPlusC' style='display:inline; colour:red'>" + inputDummy + "^C</p>";
+    inputLine.outerHTML = coloredText
+}
+
+function pressTabToComplete() {
+
+    var inputLineValue = document.getElementById(inputLineId).value;
+
+    if (tabPressCounter == 0) {saveInputLineValue = inputLineValue};
+
+    tabPressCounter = tabPressCounter + 1
+
+    for(var i = 0; i < availableCommands.length; i++) {
+
+        // if (i >= (availableCommands.length - 1) && ) {
+
+        //     if (availableCommands.some(str => (str.toLowerCase()).startsWith(saveInputLineValue.toLowerCase()))) {
+        //         i = 0
+        //     }           
+        //     alreadyTabedCommands = [];
+        // }
+
+        var availableCommandLowercase = availableCommands[i].toLowerCase();
+
+        if (availableCommandLowercase.startsWith(saveInputLineValue.toLowerCase()) && !alreadyTabedCommands.includes(availableCommandLowercase)) {
+
+            document.getElementById(inputLineId).value = availableCommands[i];
+            alreadyTabedCommands.push((document.getElementById(inputLineId).value).toLowerCase());
+            console.log(alreadyTabedCommands)
+            console.log(tabPressCounter)
+
+            return
+
+        }
+
+
+    } 
+
 }
 
 //Executed when "Enter" is pressed
 function sendValue(event) {
     var command = event.target.value;
+
+    tabPressCounter = 0
+    alreadyTabedCommands = []
 
     logCommand(command, inputLogArray, inputCounter);
     getCommand(command);
@@ -52,12 +124,13 @@ function navigateThroughCommandHistoryForward(){
 
 function errorMessage(message) {
     document.getElementById('insertTest').insertAdjacentHTML('beforeend', "<span><p class='error'>" + message + "</p></span>");
+    document.getElementById('insertTest').insertAdjacentHTML('beforeend', "<div class='breakNewInputField'><div>");
 }
 
 function createNewInputLine(command) {
     const newInputLine = "<p class='input'>PS CV:> <input class='" + inputLineClass + "' id='" + inputLineId + "' type='text' spellcheck='false'></p>";
 
-    document.getElementById('insertTest').insertAdjacentHTML('beforeend', "<br class='breakNewInputField'>");
+    
     document.getElementById('insertTest').insertAdjacentHTML('beforeend', newInputLine);
 
     if (command != "clear" && command != "Clear-Host") {
@@ -92,6 +165,7 @@ function generateHtmlFromResponse(response) {
                     insertHtml(html);
                 }
         }
+        document.getElementById('insertTest').insertAdjacentHTML('beforeend', "<div class='breakNewInputField'><div>");
     } else {
         errorMessage(response.Message)
     }

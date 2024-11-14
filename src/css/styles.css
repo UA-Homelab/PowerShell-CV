@@ -11,7 +11,7 @@ body {
 }
 
 input {
-    width: 75%;
+    width: fit-content;
     border:none;
     border-width: 0px;
     background-color: #012456;
@@ -39,7 +39,7 @@ h1 {
 
 p {
     margin: 0;
-    
+    padding:0;
 }
 
 a {
@@ -55,13 +55,49 @@ a {
     margin-left: 40px;
 }
 
+.input {
+    margin-top: 0;
+    padding: 0;
+}
+
 .newInputLine {
-    margin-top: 10px;
-    font-family: Consolas, monaco, monospace; 
+    display: inline;
+    border: none;
+    outline: none;
+    border-radius: 0%;
+    margin-top: 0;
+    margin-right: 0px;
+    font-family: Consolas, monaco, monospace;
+    border-width: 0px;
+    background-color: #012456;
+    color: rgb(201, 204, 38);
+    font-size: 15px;
+    font-weight: bold;
+    height: min-content;
+}
+
+.dummyInputLine {
+    display: inline;
+    border: none;
+    outline: none;
+    border-radius: 0%;
+    margin-top: 0px;
+    margin-right: 0px;
+    font-family: Consolas, monaco, monospace;
+    border-width: 0px;
+    background-color: #012456;
+    color: rgb(201, 204, 38);
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 5;
 }
 
 .error {
     color: red;
+    border-radius: 0%;
+    border-style: none;
     background-color: black;
     width: 50%;
 }
@@ -104,15 +140,29 @@ a {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
+.breakNewInputField {
+    margin-top: 10px;
+}
 #newResponseBlock {
     margin-top: 10px;
 }
 
-#newInputField {
+/* #newInputField {
     margin-top: 10px;
-}
-
+} */
+/* 
 #breakNInputField {
     margin-top: 10px;
+} */
+
+.controlPlusC {
+    width: auto;
+    display: inline;
+    color: red;
 }
 
+/* #activeInputLine {
+    padding: 0;
+    margin: 0;
+} */
