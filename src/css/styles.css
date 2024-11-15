@@ -15,9 +15,10 @@ input {
     border:none;
     border-width: 0px;
     background-color: #012456;
-    color: rgb(201, 204, 38);
+/*     color: rgb(201, 204, 38); */
+    color: white;
     font-size: 15px;
-    font-weight: bold;
+/*     font-weight: bold; */
 }
 
 input:focus {
@@ -70,9 +71,10 @@ a {
     font-family: Consolas, monaco, monospace;
     border-width: 0px;
     background-color: #012456;
-    color: rgb(201, 204, 38);
+/*     color: rgb(201, 204, 38); */
+    color: white;
     font-size: 15px;
-    font-weight: bold;
+/*     font-weight: bold; */
     height: min-content;
 }
 
@@ -86,9 +88,10 @@ a {
     font-family: Consolas, monaco, monospace;
     border-width: 0px;
     background-color: #012456;
-    color: rgb(201, 204, 38);
+/*     color: rgb(201, 204, 38); */
+    color: white;
     font-size: 15px;
-    font-weight: bold;
+/*     font-weight: bold; */
     padding-top: 5px;
     padding-bottom: 5px;
     height: 5;
