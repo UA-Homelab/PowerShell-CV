@@ -12,12 +12,11 @@ const availableCommands = [
     "Open-LinkedIn",
     "Get-Hobby",
     "Clear-Host",
-    "Get-ContactInformation",
-    "Get-RandomFactAboutMe",
     "Get-Instrument",
     "Get-Skill",
     "Get-Certification",
-    "Get-Education"
+    "Get-Education",
+    "Get-FavouriteBands"
 ]
 var alreadyTabedCommands = [];
 var saveInputLineValue = "";
