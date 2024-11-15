@@ -3,6 +3,7 @@
     <title>My Life in a PowerShell</title>
     <link rel="icon" type="image/x-icon" href="./img/powershell.png">
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class="header">
@@ -18,7 +19,8 @@
             <p>Alexander Urdl - My life in a PowerShell</p> <br>
             <p>Github: <a href="https://github.com/UA-Homelab/PowerShell-CV" target="_blank">https://github.com/UA-Homelab/PowerShell-CV</a></p><br>
         </div>
-        <div class="welcomeMessage">
+        <div class="welcomeMessage" id="overlay">
+            <span class="closebtn" onclick="closeOverlay()">&times;</span>
             <p class="greeting">Welcome to my first personal project!</p> <br>
             <div class="about">
                 <h1>About</h1>
@@ -51,6 +53,7 @@
     <script type = "text/javascript" src="functions.js"></script> 
     <script>
         prepareCommandInput();
+
     </script>
 </body>
 </html>

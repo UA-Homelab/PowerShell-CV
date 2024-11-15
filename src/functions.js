@@ -16,7 +16,8 @@ const availableCommands = [
     "Get-Skill",
     "Get-Certification",
     "Get-Education",
-    "Get-FavouriteBands"
+    "Get-FavouriteBands",
+    "Show-Welcome"
 ]
 var alreadyTabedCommands = [];
 var saveInputLineValue = "";
@@ -157,9 +158,9 @@ function generateHtmlFromResponse(response) {
                     var value = response.Values[i][key];
 
                     if (x == 0) {
-                        var html = "<p class='response' id='newResponseBlock'>" + key + ": " + value + "</p>";
+                        var html = "<p class='response' id='newResponseBlock'>" + "<span class='key'>" + key + ":</span> " + value + "</p>";
                     } else {
-                        var html = "<p class='response'>" + key + ": " + value + "</p>";
+                        var html = "<p class='response'>" + "<span class='key'>" + key + ":</span>  " + value + "</p>";
                     }
                     
                     insertHtml(html);
@@ -194,7 +195,11 @@ function getCommand(command) {
         createNewInputLine(command);
     } else if (command.toLowerCase() == "open-githubrepo" || command.toLowerCase() == "open-githubrepository"){
         window.open("https://github.com/UA-Homelab/PowerShell-CV").focus();
-    } 
+        createNewInputLine(command);
+    } else if (command.toLowerCase() == "show-welcome" || command.toLowerCase() == "show-welcomemessage") {
+        document.getElementById("overlay").style.display = "block";
+        createNewInputLine(command);
+    }
     else {
         const requestUrl = "https://fa-pscv-prod-ne-001.azurewebsites.net/api/getCommand"
         apiRequest(requestUrl, command);
@@ -220,4 +225,13 @@ function clear() {
 function logCommand(command) {
     inputLogArray.push(command);
     inputCounter++;
+}
+
+function closeOverlay() {
+    document.getElementById("overlay").style.display = "none";
+
+    setTimeout(() => {
+        document.getElementById(inputLineId).focus();
+    }, 0);
+    
 }
