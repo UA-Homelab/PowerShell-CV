@@ -4,185 +4,8 @@
 }
 
 
-@media only screen and (min-width: 0px) and (max-width: 320px) {
-    body {
-        background-color: #012456;
-        font-family: Consolas, monaco, monospace; 
-        font-size: 26px; 
-        font-style: normal; 
-        font-variant: normal; 
-        line-height: 20px;
-        font-weight: 500;
-        color: rgb(231, 226, 226);
-    }
-    
-    input {
-        width: 75%;
-        border:none;
-        border-width: 0px;
-        background-color: #012456;
-        color: rgb(201, 204, 38);
-        font-size: 15px;
-        font-weight: bold;
-    }
-    
-    input:focus {
-        width: 75%;
-        outline:none;
-    }
-    
-    br {
-        line-height: 0px;
-        margin: 0;
-    }
-    
-    h1 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        margin-bottom: 0px;
-        margin-top: 0px;
-    }
-    
-    p {
-        margin: 0;
-        padding:0;
-    }
-    
-    a {
-        color: white;
-    }
-    
-    .projectInformation {
-        padding-bottom: 1rem;
-    }
-    
-    .tab {
-        display: inline-block;
-        margin-left: 40px;
-    }
-    
-    .input {
-        margin-top: 0;
-        padding: 0;
-    }
-    
-    .newInputLine {
-        display: inline;
-        border: none;
-        outline: none;
-        border-radius: 0%;
-        margin-top: 0;
-        margin-right: 0px;
-        font-family: Consolas, monaco, monospace;
-        border-width: 0px;
-        background-color: #012456;
-        color: rgb(201, 204, 38);
-        font-size: 15px;
-        font-weight: bold;
-        height: min-content;
-    }
-    
-    .dummyInputLine {
-        display: inline;
-        border: none;
-        outline: none;
-        border-radius: 0%;
-        margin-top: 0px;
-        margin-right: 0px;
-        font-family: Consolas, monaco, monospace;
-        border-width: 0px;
-        background-color: #012456;
-        color: rgb(201, 204, 38);
-        font-size: 15px;
-        font-weight: bold;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        height: 5;
-    }
-    
-    .error {
-        color: red;
-        border-radius: 0%;
-        border-style: none;
-        background-color: black;
-        width: 70%;
-    }
-    
-    .header {
-        width: 100%;
-    }
-    
-    .ascii {
-    
-        font-weight: 500;
-        margin-left: 0px;
-    }
-    
-    .closebtn {
-        cursor: pointer;
-        font-size: 2rem;
-        position: absolute;
-        right: 15px;
-        top:5px;
-        text-align: right;
-    }
-    
-    .welcomeMessage {
 
-        box-sizing: border-box;
-
-        position: fixed;
-        /* right: 50px; */
-        top: 10px;
-        left: 5px;
-        padding: 1em;
-        margin-left: 1em;
-        margin-bottom: 1em;
-        margin-right: 1em;
-        width: 95%;
-        
-        color: #012456;
-        background-color: rgb(219, 219, 216);
-        z-index: 1;
-        border-radius: 10px;
-    }
-    
-    .greeting {
-        margin-bottom: 1em;
-    }
-    
-    .regards {
-        margin-top: 1em;
-    }
-    
-    .help {
-        margin-top: 1em;
-        font-weight: bolder;
-        color: green;
-    }
-    
-    .technicalInformation {
-        margin-top: 1em;
-        margin-bottom: 1em;
-    }
-    
-    .breakNewInputField {
-        margin-top: 10px;
-    }
-    #newResponseBlock {
-        margin-top: 10px;
-    }
-    
-
-    .controlPlusC {
-        width: auto;
-        display: inline;
-        color: red;
-    }
-}
-
-
-@media only screen and (min-width: 321px) and (max-width: 500px) {
+@media only screen and (min-width: 0px) and (max-width: 500px) {
     body {
         background-color: #012456;
         font-family: Consolas, monaco, monospace; 
@@ -370,7 +193,11 @@
     }
 }
 
-@media only screen and (min-width: 501px) {
+
+
+
+
+@media only screen and (min-width: 501px) and (max-width: 1099px) {
 
 body {
     background-color: #012456;
@@ -504,8 +331,9 @@ a {
 
 .welcomeMessage {
     border-radius: 10px;
+    overflow: scroll;
     position: fixed;
-    right: 20px;
+    right: 50px;
     top: 10px;
     left: 5px;
     z-index: 1;
@@ -514,7 +342,8 @@ a {
     padding: 1em;
     margin-left: 1em;
     margin-bottom: 1em;
-    width: 1000px;
+    width: 90%;
+    height: 70%;
 }
 
 .greeting {
@@ -550,3 +379,185 @@ a {
 }
 
 }
+        
+
+@media only screen and (min-width: 1100px) {
+
+    body {
+        background-color: #012456;
+        font-family: Consolas, monaco, monospace; 
+        font-size: 0.85rem; 
+        font-style: normal; 
+        font-variant: normal; 
+        line-height: 20px;
+        font-weight: 500;
+        color: rgb(231, 226, 226);
+        width: 100%;
+    }
+    
+    input {
+        width: 75%;
+        border:none;
+        border-width: 0px;
+        background-color: #012456;
+        color: rgb(201, 204, 38);
+        font-weight: bold;
+        z-index: 0;
+        font-size: 0.85rem;
+    }
+    
+    input:focus {
+        width: 75%;
+        outline:none;
+    }
+    
+    br {
+        line-height: 0px;
+        margin: 0;
+    }
+    
+    h1 {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    
+    p {
+        margin: 0;
+        padding:0;
+        font-size: 0.85rem;
+    }
+    
+    a {
+        color: white;
+    }
+    
+    .response {
+        font-size: 0.85rem;
+    }
+    
+    .projectInformation {
+        padding-bottom: 1rem;
+    }
+    
+    .tab {
+        display: inline-block;
+        margin-left: 40px;
+    }
+    
+    .input {
+        margin-top: 0;
+        padding: 0;
+        font-size: 0.85rem;
+    }
+    
+    .newInputLine {
+        display: inline;
+        border: none;
+        outline: none;
+        border-radius: 0%;
+        margin-top: 0;
+        margin-right: 0px;
+        font-family: Consolas, monaco, monospace;
+        border-width: 0px;
+        background-color: #012456;
+        color: rgb(201, 204, 38);
+        font-size: 0.85rem;
+        font-weight: bold;
+        height: min-content;
+    }
+    
+    .dummyInputLine {
+        display: inline;
+        border: none;
+        outline: none;
+        border-radius: 0%;
+        margin-top: 0px;
+        margin-right: 0px;
+        font-family: Consolas, monaco, monospace;
+        border-width: 0px;
+        background-color: #012456;
+        color: rgb(201, 204, 38);
+        font-size: 0.85rem;
+        font-weight: bold;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height: 5;
+    }
+    
+    .error {
+        color: red;
+        border-radius: 0%;
+        border-style: none;
+        background-color: black;
+        font-size: 0.85rem;
+        width: 70%;
+    }
+    
+    .header {
+        width: 100%;
+    }
+    
+    .ascii {
+        font-weight: 500;
+        margin-left: 0px;
+    }
+    
+    .closebtn {
+        cursor: pointer;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 15px;
+        top:5px;
+        text-align: right;
+    }
+    
+    .welcomeMessage {
+        border-radius: 10px;
+        position: fixed;
+        right: 20px;
+        top: 10px;
+        left: 5px;
+        z-index: 1;
+        color: #012456;
+        background-color: rgb(219, 219, 216);
+        padding: 1em;
+        margin-left: 1em;
+        margin-bottom: 1em;
+        width: 1000px;
+    }
+    
+    .greeting {
+        margin-bottom: 1em;
+    }
+    
+    .regards {
+        margin-top: 1em;
+    }
+    
+    .help {
+        margin-top: 1em;
+        font-weight: bolder;
+        color: green;
+    }
+    
+    .technicalInformation {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    
+    .breakNewInputField {
+        margin-top: 10px;
+    }
+    #newResponseBlock {
+        margin-top: 10px;
+    }
+    
+    .controlPlusC {
+        width: auto;
+        display: inline;
+        color: red;
+    }
+    
+    }
