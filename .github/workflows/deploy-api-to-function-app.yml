@@ -38,7 +38,7 @@ jobs:
 
     - name: Archive the build output
       run: |
-        zip function.zip ./api
+        zip function.zip .
 
     - name: Deploy to Azure Functions
       uses: azure/functions-action@v1
