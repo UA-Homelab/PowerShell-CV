@@ -21,7 +21,6 @@ param buildPipelineAppLocation string = 'src'
 param repositoryBranch string = 'main'
 param repositoryUrl string = 'https://github.com/UA-Homelab/PowerShell-CV'
 param buildPipelineApiLocation string?
-@secure()
 param repositoryToken string?
 
 // parameters for function app
