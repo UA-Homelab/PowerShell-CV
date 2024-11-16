@@ -20,7 +20,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout code
@@ -45,9 +45,6 @@ jobs:
     - name: Deploy to Azure Functions
       run: |
         ls
-        Start-BitsTransfer -Source "https://go.microsoft.com/fwlink/?linkid=2174087" -Destination ".\func.msi"
-        Start-Process .\func.msi -ArgumentList '/quiet' -Wait
-        Invoke-Command { & "powershell.exe" } -NoNewScope # PowerShell 5
         cd api
         func azure functionapp publish func-pscv-prod-eun-001
 
