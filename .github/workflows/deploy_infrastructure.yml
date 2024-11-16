@@ -37,7 +37,7 @@ jobs:
         operation: create
         scope: subscription
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-        location: norheurope
+        location: northeurope
         name: deploy-pscv-resources
         template: ./infra/main.bicep
         parameters: 'reprepositoryToken=${{ secrets.REPO_TOKEN }} buildPipelineApiLocation=api'
