@@ -73,7 +73,7 @@ func getCommand(w http.ResponseWriter, r *http.Request) {
 		EnableContentResponseOnWrite: true,
 	}
 
-	client, err := azcosmos.NewClient("https://cdb-pscv-prod-ne-001.documents.azure.com:443/", credential, &clientOptions)
+	client, err := azcosmos.NewClient("https://cosmos-pscv-prod-eun-001.documents.azure.com:443/", credential, &clientOptions)
 	if err != nil {
 		commandNotFound.Message = "Couldn't connect to Cosmos DB"
 		commandNotFound.Error = err
