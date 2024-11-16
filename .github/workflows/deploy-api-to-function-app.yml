@@ -38,8 +38,7 @@ jobs:
 
     - name: Archive the build output
       run: |
-        cd api
-        zip function.zip ./main.go
+        zip function.zip ./api
 
     - name: Deploy to Azure Functions
       uses: azure/functions-action@v1
