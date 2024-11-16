@@ -46,5 +46,5 @@ jobs:
       run: |
         cd api  
         ls
-        func azure functionapp publish func-pscv-prod-eun-001
+        func azure functionapp publish func-pscv-prod-eun-001 --custom
 
