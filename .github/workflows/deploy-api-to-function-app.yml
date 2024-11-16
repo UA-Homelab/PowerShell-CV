@@ -48,7 +48,7 @@ jobs:
          creds: ${{ secrets.AZURE_CREDENTIALS }}
           
     - name: Deploy to Azure Functions
-      run:
+      run: |
         ls
         Get-AzContext
         Start-BitsTransfer -Source $source -Destination ".\func.msi"
