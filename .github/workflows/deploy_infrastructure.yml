@@ -39,9 +39,8 @@ jobs:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         location: northeurope
         name: deploy-pscv-resources
-        template: ./infra/main.bicep
+        template-file: ./infra/main.bicep
         parameters: 'reprepositoryToken=${{ secrets.REPO_TOKEN }} buildPipelineApiLocation=api'
-        failOnStdErr: false
         action-on-unmanage-resources: delete
         action-on-unmanage-resourcegroups: delete
         deny-settings-mode: none
