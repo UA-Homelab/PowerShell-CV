@@ -44,7 +44,7 @@ jobs:
           
     - name: Deploy to Azure Functions
       run: |
+        cd api  
         ls
-        cd api
         func azure functionapp publish func-pscv-prod-eun-001
 
