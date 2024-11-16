@@ -50,7 +50,7 @@ jobs:
     - name: Deploy to Azure Functions
       run: |
         ls
-        Start-BitsTransfer -Source $source -Destination ".\func.msi"
+        Start-BitsTransfer -Source "https://go.microsoft.com/fwlink/?linkid=2174087" -Destination ".\func.msi"
         Start-Process .\func.msi -ArgumentList '/quiet' -Wait
         cd api
         func azure functionapp publish func-pscv-prod-eun-001
