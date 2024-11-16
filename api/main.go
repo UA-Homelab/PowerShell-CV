@@ -11,8 +11,6 @@ import (
 
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
 	"github.com/Azure/azure-sdk-for-go/sdk/data/azcosmos"
-
-	_ "github.com/microsoft/go-mssqldb"
 )
 
 type ReturnError struct {
