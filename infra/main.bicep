@@ -38,7 +38,7 @@ param cosmosDbPartitionKeyPaths array = [
 var location_short = getLocationShortcut(region)
 var resource_name_suffix = toLower('${applicationShort}-${environment}-${location_short}-${index}')
 var resource_group_name = 'rg-${resource_name_suffix}'
-var static_web_app_name = 'swa-${applicationShort}-${environment}-${getLocationShortcut(staticWebAppRegion)}-${index}'
+var static_web_app_name = toLower('swa-${applicationShort}-${environment}-${getLocationShortcut(staticWebAppRegion)}-${index}')
 var function_app_name = 'func-${resource_name_suffix}'
 var cosmos_db_account_name = 'cosmos-${resource_name_suffix}'
 
