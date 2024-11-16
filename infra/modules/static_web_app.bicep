@@ -5,6 +5,7 @@ param repositoryUrl string
 
 @description('The target branch in the repository.')
 param repositoryBranch string
+
 @secure()
 @description('Token to connect to repository and create necessary files.')
 param repositoryToken string?
