@@ -33,6 +33,7 @@ The commands return information about me.
 | Open-SoundCloud | Opens my SoundCloud page |
 | Open-LinkedIn | Opens my LinkedIn profile |
 | Show-Welcome | Opens the welcome message, that is opened when the page loads the first time |
+| Clear-Host | Remove all inputs and outputs from the sceen and start with a new input line. Alias: clear |
 
 
 I also tried to make the experience as close to working in an actual PowerShell as possible. That's why I imlemented the following features:
