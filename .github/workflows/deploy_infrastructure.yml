@@ -1,4 +1,4 @@
-name: Deploy Bicep file
+name: Deploy PSCV resources
 on: 
   workflow_dispatch:
     inputs:
@@ -33,8 +33,15 @@ jobs:
     - name: Deploy Bicep file
       uses: azure/arm-deploy@v1
       with:
+        type: deploymentStack
+        operation: create
         scope: subscription
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+        location: norheurope
+        name: deploy-pscv-resources
         template: ./infra/main.bicep
         parameters: 'reprepositoryToken=${{ secrets.REPO_TOKEN }} buildPipelineApiLocation=api'
         failOnStdErr: false
+        action-on-unmanage-resources: delete
+        action-on-unmanage-resourcegroups: delete
+        deny-settings-mode: none
