@@ -20,7 +20,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout code
@@ -34,7 +34,7 @@ jobs:
     - name: Build the Go project
       run: |
         cd api
-        env GOOS=windows go build .
+        go build .
 
     - name: Archive the build output
       run: |
