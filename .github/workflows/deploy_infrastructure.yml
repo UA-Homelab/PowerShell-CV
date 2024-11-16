@@ -36,7 +36,7 @@ jobs:
         type: deploymentStack
         operation: create
         scope: subscription
-        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION }}
         location: northeurope
         name: deploy-pscv-resources
         template-file: ./infra/main.bicep
