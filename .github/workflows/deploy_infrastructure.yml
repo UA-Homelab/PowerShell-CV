@@ -1,0 +1,28 @@
+name: Deploy Bicep file
+on:
+  push:
+    branches:
+      - main
+    paths:
+      -'infra'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout code
+      uses: actions/checkout@main
+
+    - name: Log into Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy Bicep file
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+        template: ./infra/main.bicep
+        parameters: 'reprepositoryToken=${{ secrets.REPO_TOKEN }} buildPipelineApiLocation=api'
+        failOnStdErr: false

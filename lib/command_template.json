@@ -1,0 +1,10 @@
+{
+    "id": "<CommandNameLowerCase>",
+    "command_name": "=id",
+    "Values": [
+        {
+            "Key1": "Value1",
+            "Key2": "Value2"
+        }
+    ]
+}

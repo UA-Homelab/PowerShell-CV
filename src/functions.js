@@ -3,21 +3,21 @@ const inputLogArray = [];
 var inputCounter = 0;
 const inputLineId = "activeInputLine";
 const inputLineClass = "newInputLine";
-const availableCommands = [
+const availableCommands = [ 
     "Get-Help",
-    "Get-PersonalInformation",
+    "Get-Certification", 
+    "Get-Education", 
+    "Get-FavouriteBands", 
+    "Get-Hobby", 
+    "Get-Instrument", 
+    "Get-PersonalInformation", 
+    "Get-Skill", 
     "Get-WorkExperience",
-    "Open-GitHubRepo",
-    "Open-SoundCloud",
-    "Open-LinkedIn",
-    "Get-Hobby",
-    "Clear-Host",
-    "Get-Instrument",
-    "Get-Skill",
-    "Get-Certification",
-    "Get-Education",
-    "Get-FavouriteBands",
-    "Show-Welcome"
+    "Open-GitHubRepo", 
+    "Open-LinkedIn", 
+    "Open-SoundCloud", 
+    "Show-Welcome",
+    "Clear-Host", 
 ]
 var alreadyTabedCommands = [];
 var saveInputLineValue = "";
