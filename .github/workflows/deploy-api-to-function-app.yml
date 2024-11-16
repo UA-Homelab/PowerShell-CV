@@ -50,7 +50,6 @@ jobs:
     - name: Deploy to Azure Functions
       run: |
         ls
-        Get-AzContext
         Start-BitsTransfer -Source $source -Destination ".\func.msi"
         Start-Process .\func.msi -ArgumentList '/quiet' -Wait
         cd api
