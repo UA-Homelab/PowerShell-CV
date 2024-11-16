@@ -36,11 +36,6 @@ jobs:
         cd api
         go build .
         ls
-
-    - name: Archive the build output
-      run: |
-        ls
-        Compress-Archive -LiteralPath .\api -DestinationPath .\function.zip
     
     - name: Azure login
       uses: azure/login@v2
@@ -52,6 +47,7 @@ jobs:
         ls
         Start-BitsTransfer -Source "https://go.microsoft.com/fwlink/?linkid=2174087" -Destination ".\func.msi"
         Start-Process .\func.msi -ArgumentList '/quiet' -Wait
+        Invoke-Command { & "powershell.exe" } -NoNewScope # PowerShell 5
         cd api
         func azure functionapp publish func-pscv-prod-eun-001
 
