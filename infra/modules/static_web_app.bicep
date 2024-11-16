@@ -5,7 +5,7 @@ param repositoryUrl string
 
 @description('The target branch in the repository.')
 param repositoryBranch string
-
+@secure()
 @description('Token to connect to repository and create necessary files.')
 param repositoryToken string?
 
@@ -30,7 +30,7 @@ param region string
 @description('SKU of the static web app.')
 param sku string
 
-var skipGithubActionWorkflowGeneration = repositoryToken == '' ? false : true
+var skipGithubActionWorkflowGeneration = false
 
 resource static_web_app 'Microsoft.Web/staticSites@2023-12-01' = {
   name: staticWebAppName
