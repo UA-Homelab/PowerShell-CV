@@ -41,10 +41,18 @@ jobs:
       run: |
         ls
         Compress-Archive -LiteralPath .\api -DestinationPath .\function.zip
-
-    - name: Deploy to Azure Functions
-      uses: azure/functions-action@v1
+    
+    - name: Azure login
+      uses: azure/login@v2
       with:
-        app-name: 'fa-pscv-prod-ne-001'
-        package: './function.zip'
-        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+         creds: ${{ secrets.AZURE_CREDENTIALS }}
+          
+    - name: Deploy to Azure Functions
+      run:
+        ls
+        Get-AzContext
+        Start-BitsTransfer -Source $source -Destination ".\func.msi"
+        Start-Process .\func.msi -ArgumentList '/quiet' -Wait
+        cd api
+        func azure functionapp publish func-pscv-prod-eun-001
+

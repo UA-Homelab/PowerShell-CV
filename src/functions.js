@@ -201,7 +201,7 @@ function getCommand(command) {
         createNewInputLine(command);
     }
     else {
-        const requestUrl = "https://fa-pscv-prod-ne-001.azurewebsites.net/api/getCommand"
+        const requestUrl = "https://func-pscv-prod-eun-001.azurewebsites.net/api/getCommand"
         apiRequest(requestUrl, command);
     }
 }
