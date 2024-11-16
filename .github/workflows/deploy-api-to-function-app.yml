@@ -33,11 +33,11 @@ jobs:
 
     - name: Build the Go project
       run: |
-        env GOOS=windows go build .
+        env GOOS=windows go build ./api/main.go
 
     - name: Archive the build output
       run: |
-        zip function.zip main
+        zip function.zip ./api/main.go
 
     - name: Deploy to Azure Functions
       uses: azure/functions-action@v1
