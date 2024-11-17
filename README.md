@@ -65,6 +65,6 @@ Since I wanted the API to respond with the commands in json format, I decided to
 
 Deploying the Infrastructure and Static Web App was pretty staight forward. From my job I am more used to Azure DevOps Pipelines, but lots of the knowlege also applies to GitHub Actions.
 
-When trying to automate the deployment of the Go-API to Azure Functions, I found out that it is not possible with the "functions-action". The solution I came up with was to use a self-hosted runner and install the Azure Function Core Tools. After that, the deployment worked very well using the command <code> func azure functionapp publish "function-app-name" --custom</code>.
+When trying to automate the deployment of the Go-API to Azure Functions, I found out that it is not possible with the "functions-action". The solution I came up with was to use a self-hosted runner and install the Azure Function Core Tools. After that, the deployment worked very well using the command <code>func azure functionapp publish "function-app-name" --custom</code>.
 
 
