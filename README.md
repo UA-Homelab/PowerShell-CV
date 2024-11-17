@@ -16,13 +16,13 @@ The commands return information about me.
 |Get-Certification| Returns a list of all my acitive certifications|
 |Get-Skill| Returns a list of my skills and how proficient I am in each of them|
 | Get-Education| Returns information about my formal education|
-| Get-WorkExperience| Returns a list about the roles and companies I have worked in|
+| Get-WorkExperience| Returns a list of my last jobs|
 | Get-PersonalInformation | Returns personal information about me |
 | Open-GitHubRepo | Opens the projects repository |
 | Open-SoundCloud | Opens my SoundCloud page |
 | Open-LinkedIn | Opens my LinkedIn profile |
 | Show-Welcome | Opens the welcome message, that is opened when the page loads the first time |
-| Clear-Host | Remove all inputs and outputs from the sceen and start with a new input line. Alias: clear |
+| Clear-Host | Removes all text inside the shell. The command history will not be deleted. Alias: 'clear'. |
 
 I also tried to make the experience as close to working in an actual PowerShell as possible. That's why I implemented the following features:
 
