@@ -1,13 +1,15 @@
 # My life in a PowerShell
 
 ## About
+I wanted to create a personal website, but a default design was too boring to keep me excited enough to build it. When I saw a portfolio site designed like bash, I knew this was the type of site I want and started working on this project.
+
+Since I work every day with PowerShell, I decided to replicate its design and syntax.
 
 ## Infrastructure
 
-The infrastructure consists of a Static Web App (Free), an Azure Function App (Consumption Plan) and an Azure CosmosDB (Free). It was deployed using Bicep and GitHub Actions.
+In my job I design and deploy Azure Infrastructure using IaC (Bicep and Terraform). So I decided to host the app in Azure and deploy it as code over GitHub Actions.
 
-
-
+### Overview
 ![infrastructure_overview](readme_files/infrastructure.png)
 
 1. User interacts with site.
@@ -15,6 +17,17 @@ The infrastructure consists of a Static Web App (Free), an Azure Function App (C
 3. Function App authenticates against CosmosDB with managed identity and gets the .json, in which the command is defined.
 4. CosmosDB returns the json content.
 5. Function App responds with a json object and Frontend renders the command output for the user.
+
+### Frontend
+For the frontend I used a Static Web App, as it has a free sku, which has almost no limitations that were relevant to my plan (except only allowing managed functions and no managed identity).
+
+### API
+As I didn't want all my information and especially no secrets in the frontend code, I decided to create an API that connects to a database, in which the command responses are defined. To authorize against the database, I use the managed identity of the function app.
+
+When I started my Bachelor (early 2024), the first course used Go. I liked the language a lot (I tried Python and Javascript before) and decided to build the API in it (which made the automatic deployment to Azure Functions a bit of a pain though...).
+
+### Database
+Since I wanted the API to respond with the commands in json format, I decided to use a NoSQL database. Though it is quite overkill for the project, I used Azure CosmosDB, since it has a free sku with no relevant limitations to this project and I wanted to try it. Azure Storage for Tables would have been enough too though.
 
 ## Commands and features
 
@@ -35,11 +48,16 @@ The commands return information about me.
 | Show-Welcome | Opens the welcome message, that is opened when the page loads the first time |
 | Clear-Host | Remove all inputs and outputs from the sceen and start with a new input line. Alias: clear |
 
-
 I also tried to make the experience as close to working in an actual PowerShell as possible. That's why I imlemented the following features:
 
 - Complete a command using the "Tab"-Key.
 - Interrupt the current input with ctrl+c.
 - Navigate through the command history by using the arrow keys up and down.
+
+## Pipelines/GitHub Actions
+
+Deploying the Infrastructure and Static Web App was pretty staight forward. From my job I am more used to Azure DevOps Pipelines, but lots of the knowlege also applies to GitHub Actions.
+
+When trying to automate the deployment of the Go-API to Azure Functions, I found out that it is not possible with the "functions-action". The solution I came up with was to use a self-hosted runner and install the Azure Function Core Tools. After that, the deployment worked very well using the command <code> func azure functionapp publish "function-app-name" --custom</code>.
 
 
