@@ -48,6 +48,7 @@ function prepareCommandInput() {
             alreadyTabedCommands = []
         }
         if (event.ctrlKey && event.key === 'c') {
+            inputCounter = inputLogArray.length
             tabPressCounter = 0;
             event.preventDefault();
             commandPlusC()
