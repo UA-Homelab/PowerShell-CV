@@ -1,24 +1,17 @@
 name: Azure Static Web Apps CI/CD
 
 on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-        - info
-        - warning
-        - debug
   push:
     branches:
       - main
+    paths:
+      - 'src/**'
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+    paths:
+      - 'src/**'
 
 jobs:
   build_and_deploy_job:
