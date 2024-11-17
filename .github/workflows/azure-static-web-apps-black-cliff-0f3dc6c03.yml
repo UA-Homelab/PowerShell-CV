@@ -11,7 +11,7 @@ on:
     branches:
       - main
     paths:
-      - 'src/*'
+      - 'src/**'
 
 jobs:
   build_and_deploy_job:

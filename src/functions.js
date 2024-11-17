@@ -1,6 +1,4 @@
-var inputLogArrayLength = 0;
 const inputLogArray = [];
-var inputCounter = 0;
 const inputLineId = "activeInputLine";
 const inputLineClass = "newInputLine";
 const availableCommands = [ 
@@ -17,9 +15,12 @@ const availableCommands = [
     "Show-Welcome",
     "Clear-Host", 
 ]
+
 var alreadyTabedCommands = [];
 var saveInputLineValue = "";
 var tabPressCounter = 0;
+var inputCounter = 0;
+var inputLogArrayLength = 0;
 
 // Used to prepare a new input field
 function prepareCommandInput() {
