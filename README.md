@@ -34,8 +34,15 @@ I also tried to make the experience as close to working in an actual PowerShell 
 
 In my job I design and deploy Azure Infrastructure using IaC (Bicep and Terraform). So I decided to host the app in Azure and deploy it as code over GitHub Actions.
 
+
+
 ### Overview
-![infrastructure_overview](readme_files/infrastructure.png)
+
+<p align="center">
+  <img src="readme_files/infrastructure.png" />
+</p>
+<!-- 
+![infrastructure_overview](readme_files/infrastructure.png) -->
 
 1. User interacts with site.
 2. Command gets send to Function App.
