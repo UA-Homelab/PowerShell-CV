@@ -21,26 +21,25 @@
         </div>
         <div class="welcomeMessage" id="overlay">
             <span class="closebtn" onclick="closeOverlay()">&times;</span>
-            <p class="greeting">Welcome to my first personal project!</p> <br>
-            <div class="about">
-                <h1>About</h1>
-                <p>On this site you can use commands, that resemble PowerShell syntax, to get information about my personal life and career.</p> <br>
-                <p>I choose this project because I am not a great designer but have high standards to myself and my work.</p><br>
-                <p>Hoping to be able to finish a personal project, I choose this text based design, so I can focus on the logic and technology for the site.</p><br>
-            </div>
-            <div class="technicalInformation">
-                <h1>Technical Information</h1>
-                <p>This project was build using HTML, CSS, Javascript, Go and Azure Cosmos DB.</p><br>
-                <p>It is hosted in Azure. The infrastructure was prepared with Bicep templates, that can be found in the project repository.</p><br>
-                <p>The code is deployed to a "Static Web App" for frontend and a "Function App" for backend using GitHub Actions.</p><br>
-                <p>An "Azure Cosmos DB" contains the JSON files that are used for the commands output. </p>
-            </div>
-            <br>
-            <p>I hope you like it and have fun! :) </p> <br>
-            <p class="help">To get started type "Get-Help". This will return all available commands.</p> <br>             
-            <div class ="regards">
-                <p>Best regards, </p><br>
-                <p>Alex</p>
+            <p class="greeting">Welcome to my life in a PowerShell!</p> <br>
+            <div class = mainContent>
+                <div class="about">
+                    <h1>About</h1>
+                    <p>I wanted to create a personal website, but a classic design was too boring to keep me excited enough to build it. When I saw a portfolio site designed like bash, I knew this was the type of site I want and started working on this project.</p><br>
+                    <p>Since I work every day with PowerShell, I decided to replicate its design and syntax.</p><br>
+                    <p>For more information, you can have a look at the <a href="https://github.com/UA-Homelab/PowerShell-CV">repository</a> for this project</p>
+                </div>
+                <div class="technicalInformation">
+                    <h1>Commands and features</h1>
+                    <p>On this site you can use commands, that resemble PowerShell syntax, to get information about my personal life and career.</p> <br>
+                    <p>I also tried to make the experience as close to working in an actual PowerShell as possible. That's why I implemented the following features:</p><br>
+                    <ul>
+                        <li>Complete a command using the <code>"Tab"-Key</code></li>
+                        <li>Interrupt the current input with <code>ctrl+c</code></li>
+                        <li>Navigate through the command history by using the <code>arrow keys up and down</code></li>
+                    </ul>
+                    <p >To get started close this windows and type <span class="help">"Get-Help"</span>. This will return all available commands.</p> <br>
+                </div>
             </div>
         </div>
 

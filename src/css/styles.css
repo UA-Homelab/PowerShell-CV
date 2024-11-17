@@ -3,9 +3,30 @@
     font-weight: bold;
 }
 
+.greeting {
+    text-align: center;
+    margin-bottom: 1em;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0em; /* Adjust as needed */
+}
 
+.mainContent a {
+    color:#012456;
+}
+
+.mainContent p {
+    margin-top: 0.5rem;
+}
 
 @media only screen and (min-width: 0px) and (max-width: 500px) {
+      /* The typing effect */
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+    
     body {
         background-color: #012456;
         font-family: Consolas, monaco, monospace; 
@@ -48,6 +69,10 @@
     p {
         margin: 0;
         padding:0;
+        font-size: 1rem;
+    }
+
+    ul {
         font-size: 1rem;
     }
     
@@ -167,7 +192,7 @@
     }
     
     .help {
-        margin-top: 1em;
+        margin-top: 1rem;
         font-weight: bolder;
         color: green;
     }
@@ -193,11 +218,7 @@
     }
 }
 
-
-
-
-
-@media only screen and (min-width: 501px) and (max-width: 1099px) {
+@media only screen and (min-width: 501px) and (max-width: 1079px) {
 
 body {
     background-color: #012456;
@@ -380,8 +401,11 @@ a {
 
 }
         
-
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1080px) {
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 35% }
+    }
 
     body {
         background-color: #012456;
@@ -432,7 +456,7 @@ a {
     a {
         color: white;
     }
-    
+
     .response {
         font-size: 0.85rem;
     }
@@ -499,11 +523,6 @@ a {
         width: 100%;
     }
     
-    .ascii {
-        font-weight: 500;
-        margin-left: 0px;
-    }
-    
     .closebtn {
         cursor: pointer;
         font-size: 1.5rem;
@@ -528,10 +547,6 @@ a {
         width: 1000px;
     }
     
-    .greeting {
-        margin-bottom: 1em;
-    }
-    
     .regards {
         margin-top: 1em;
     }
@@ -539,7 +554,7 @@ a {
     .help {
         margin-top: 1em;
         font-weight: bolder;
-        color: green;
+        color: red;
     }
     
     .technicalInformation {

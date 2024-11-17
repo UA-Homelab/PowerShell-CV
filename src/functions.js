@@ -29,6 +29,7 @@ function prepareCommandInput() {
     commandInput.addEventListener ("keydown", function(event) {
         if (event.key == "Enter") { //event.code == "Enter" || 
             sendValue(event);
+            inputCounter = inputLogArray.length
         }
         if (event.code === "ArrowUp") {
             navigateThroughCommandHistoryBackwards(commandInput, inputLogArray, inputCounter);
@@ -43,12 +44,11 @@ function prepareCommandInput() {
             pressTabToComplete();
         }
         if (event.key === 'Backspace') {
-
             tabPressCounter = 0;
             alreadyTabedCommands = []
-            console.log(tabPressCounter);
         }
         if (event.ctrlKey && event.key === 'c') {
+            tabPressCounter = 0;
             event.preventDefault();
             commandPlusC()
             createNewInputLine();
@@ -120,6 +120,9 @@ function navigateThroughCommandHistoryForward(){
     if (inputCounter < (inputLogArray.length - 1)) {
         inputCounter++;
         document.getElementById(inputLineId).value = value;
+    } else {
+        document.getElementById(inputLineId).value = null;
+        inputCounter = inputLogArray.length
     }
 }
 

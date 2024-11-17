@@ -1,7 +1,7 @@
 # My life in a PowerShell
 
 ## About
-I wanted to create a personal website, but a default design was too boring to keep me excited enough to build it. When I saw a portfolio site designed like bash, I knew this was the type of site I want and started working on this project.
+I wanted to create a personal website, but a classic design was too boring to keep me excited enough to build it. When I saw a portfolio site designed like bash, I knew this was the type of site I want and started working on this project.
 
 Since I work every day with PowerShell, I decided to replicate its design and syntax.
 
