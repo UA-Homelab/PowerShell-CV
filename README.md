@@ -56,7 +56,7 @@ For the frontend I used a Static Web App, as it has a free sku, which has almost
 ### API
 As I didn't want all my information and especially no secrets in the frontend code, I decided to create an API that connects to a database, in which the command responses are defined. To authenticate against the database, I use the managed identity of the function app.
 
-When I started my Bachelor (early 2024), the first course used Go. I liked the language a lot (I tried Python and Javascript before) and decided to build the API in it (which made the automatic deployment to Azure Functions a bit of a pain though...).
+When I started my bachelor (early 2024), the first course used Go. I liked the language a lot (I tried Python and Javascript before) and decided to build the API in it (which made the automatic deployment to Azure Functions a bit of a pain though...).
 
 ### Database
 Since I wanted the API to respond with the commands in json format, I decided to use a NoSQL database. Though it is quite overkill for the project, I used Azure CosmosDB, since it has a free sku and I wanted to try it. Azure Storage for Tables would have been enough too though.
