@@ -59,7 +59,7 @@ As I didn't want all my information and especially no secrets in the frontend co
 When I started my Bachelor (early 2024), the first course used Go. I liked the language a lot (I tried Python and Javascript before) and decided to build the API in it (which made the automatic deployment to Azure Functions a bit of a pain though...).
 
 ### Database
-Since I wanted the API to respond with the commands in json format, I decided to use a NoSQL database. Though it is quite overkill for the project, I used Azure CosmosDB, since it has a free sku with no relevant limitations to this project and I wanted to try it. Azure Storage for Tables would have been enough too though.
+Since I wanted the API to respond with the commands in json format, I decided to use a NoSQL database. Though it is quite overkill for the project, I used Azure CosmosDB, since it has a free sku and I wanted to try it. Azure Storage for Tables would have been enough too though.
 
 ## Pipelines/GitHub Actions
 
