@@ -3,15 +3,6 @@
     font-weight: bold;
 }
 
-.greeting {
-    text-align: center;
-    margin-bottom: 1em;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: 0em; /* Adjust as needed */
-}
-
 .mainContent a {
     color:#012456;
 }
@@ -21,11 +12,6 @@
 }
 
 @media only screen and (min-width: 0px) and (max-width: 500px) {
-      /* The typing effect */
-    @keyframes typing {
-        from { width: 0 }
-        to { width: 100% }
-    }
     
     body {
         background-color: #012456;
@@ -78,6 +64,24 @@
     
     a {
         color: white;
+    }
+
+    .greeting {
+        line-height: normal;
+        margin-top: 0em;
+        text-align: center;
+        visibility: hidden;
+        z-index: -1;
+        position: absolute;
+        margin-bottom: 0.5em;
+    }
+    
+    .greeting-mobile {
+        line-height: normal;
+        margin-top: 0em;
+        text-align: center;
+        visibility: visible;
+        margin-bottom: 0.5em;
     }
 
     .insertTest {
@@ -183,18 +187,10 @@
         overflow: scroll;
     }
     
-    .greeting {
-        margin-bottom: 1em;
-    }
-    
-    .regards {
-        margin-top: 1em;
-    }
-    
     .help {
         margin-top: 1rem;
         font-weight: bolder;
-        color: green;
+        color: red;
     }
     
     .technicalInformation {
@@ -268,6 +264,24 @@ p {
 
 a {
     color: white;
+}
+
+.greeting {
+    line-height: normal;
+    margin-top: 0em;
+    text-align: center;
+    visibility: visible;
+    margin-bottom: 0.5em;
+}
+
+.greeting-mobile {
+    line-height: normal;
+    margin-top: 0em;
+    text-align: center;
+    visibility: hidden;
+    z-index: -1;
+    position: absolute;
+    margin-bottom: 0.5em;
 }
 
 .response {
@@ -378,7 +392,7 @@ a {
 .help {
     margin-top: 1em;
     font-weight: bolder;
-    color: green;
+    color: red;
 }
 
 .technicalInformation {
@@ -402,10 +416,6 @@ a {
 }
         
 @media only screen and (min-width: 1080px) {
-    @keyframes typing {
-        from { width: 0 }
-        to { width: 35% }
-    }
 
     body {
         background-color: #012456;
@@ -455,6 +465,24 @@ a {
     
     a {
         color: white;
+    }
+
+    .greeting {
+        line-height: normal;
+        margin-top: 0em;
+        text-align: center;
+        visibility: visible;
+        margin-bottom: 0.5em;
+    }
+    
+    .greeting-mobile {
+        line-height: normal;
+        margin-top: 0em;
+        text-align: center;
+        visibility: hidden;
+        z-index: -1;
+        position: absolute;
+        margin-bottom: 0.5em;
     }
 
     .response {
@@ -575,4 +603,4 @@ a {
         color: red;
     }
     
-    }
+}
