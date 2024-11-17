@@ -70,9 +70,7 @@
         line-height: normal;
         margin-top: 0em;
         text-align: center;
-        visibility: hidden;
-        z-index: -1;
-        position: absolute;
+        display: none;
         margin-bottom: 0.5em;
     }
     
@@ -80,7 +78,7 @@
         line-height: normal;
         margin-top: 0em;
         text-align: center;
-        visibility: visible;
+        display: block;
         margin-bottom: 0.5em;
     }
 
@@ -270,7 +268,7 @@ a {
     line-height: normal;
     margin-top: 0em;
     text-align: center;
-    visibility: visible;
+    display: block;
     margin-bottom: 0.5em;
 }
 
@@ -278,9 +276,7 @@ a {
     line-height: normal;
     margin-top: 0em;
     text-align: center;
-    visibility: hidden;
-    z-index: -1;
-    position: absolute;
+    display: none;
     margin-bottom: 0.5em;
 }
 
@@ -471,7 +467,7 @@ a {
         line-height: normal;
         margin-top: 0em;
         text-align: center;
-        visibility: visible;
+        display: block;
         margin-bottom: 0.5em;
     }
     
@@ -479,9 +475,7 @@ a {
         line-height: normal;
         margin-top: 0em;
         text-align: center;
-        visibility: hidden;
-        z-index: -1;
-        position: absolute;
+        display: none;
         margin-bottom: 0.5em;
     }
 
