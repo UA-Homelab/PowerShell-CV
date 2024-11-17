@@ -199,6 +199,12 @@ function getCommand(command) {
     } else if (command.toLowerCase() == "open-githubrepo" || command.toLowerCase() == "open-githubrepository"){
         window.open("https://github.com/UA-Homelab/PowerShell-CV").focus();
         createNewInputLine(command);
+    } else if (command.toLowerCase() == "open-soundcloud"){
+        window.open("https://soundcloud.com/ua_records").focus();
+        createNewInputLine(command);
+    } else if (command.toLowerCase() == "open-linkedin"){
+        window.open("https://www.linkedin.com/in/alexander-urdl/").focus();
+        createNewInputLine(command);
     } else if (command.toLowerCase() == "show-welcome" || command.toLowerCase() == "show-welcomemessage") {
         document.getElementById("overlay").style.display = "block";
         createNewInputLine(command);
